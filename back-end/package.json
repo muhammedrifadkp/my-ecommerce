@@ -8,7 +8,8 @@
     "start": "node start.js",
     "seed-admin": "node seedAdmin.js",
     "seed": "node seed.js",
-    "postinstall": "echo 'Installation complete. Admin user will be created automatically if needed.'"
+    "railway:seed": "node railwaySeed.js",
+    "postinstall": "echo 'Installation complete. Admin user will be created automatically if needed.' && npm run railway:seed"
   },
   "keywords": [],
   "author": "",

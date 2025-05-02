@@ -113,5 +113,5 @@ After setting up, you can access the admin panel at:
 https://my-ecommerce-two-phi.vercel.app/admin/login
 
 Use the credentials created by the seed-admin script:
-- Admin ID: rifadkp
-- Password: rifadkp123
+- Admin ID: admin
+- Password: adm1n#54321
