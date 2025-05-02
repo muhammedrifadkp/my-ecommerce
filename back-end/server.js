@@ -13,7 +13,7 @@ const app = express();
 
 // Configure CORS
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || 'https://ecommerce-website-muhammedrifadkp.vercel.app',
+  origin: process.env.CORS_ORIGIN || 'https://my-ecommerce-two-phi.vercel.app/',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 };
