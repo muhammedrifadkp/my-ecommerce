@@ -1,0 +1,11 @@
+/* frontend\styles\globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Your custom CSS below */
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+}
