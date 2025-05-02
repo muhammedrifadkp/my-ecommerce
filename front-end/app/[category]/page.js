@@ -18,7 +18,7 @@ export default function CategoryPage() {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/products`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'my-ecommerce.railway.internal'}/api/products`);
 
         if (!response.ok) {
           throw new Error('Failed to fetch products');

@@ -30,7 +30,7 @@ app.use('/api/admin', protect, admin, (req, res) => {
   res.json({ message: 'Admin access granted', user: req.user });
 });
 
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_URI || 'mongodb://localhost:27017/ecommerce')
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_URI || 'mongodb+srv://muhammedrifadkp3:merntest@tseepacademy.rxgap.mongodb.net/ecommerce')
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
 

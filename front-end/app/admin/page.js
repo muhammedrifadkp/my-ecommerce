@@ -54,7 +54,7 @@ export default function AdminDashboard() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/products`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'my-ecommerce.railway.internal'}/api/products`);
 
       if (!response.ok) {
         throw new Error('Failed to fetch products');
@@ -80,7 +80,7 @@ export default function AdminDashboard() {
 
   const handleAddProduct = async (productData) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/products`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'my-ecommerce.railway.internal'}/api/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ export default function AdminDashboard() {
 
   const handleEditProduct = async (productData) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/products/${editingProduct._id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'my-ecommerce.railway.internal'}/api/products/${editingProduct._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ export default function AdminDashboard() {
     if (!productToDelete) return;
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/products/${productToDelete._id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'my-ecommerce.railway.internal'}/api/products/${productToDelete._id}`, {
         method: 'DELETE',
       });
 
