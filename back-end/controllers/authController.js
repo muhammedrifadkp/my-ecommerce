@@ -101,8 +101,8 @@ export const seedAdmin = async (req, res) => {
 
     // Create admin user
     const admin = await User.create({
-      username: 'rifadkp',
-      password: 'rifadkp123',
+      username: 'admin',
+      password: 'adm1n#54321',
       isAdmin: true,
     });
 

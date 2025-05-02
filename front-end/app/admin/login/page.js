@@ -27,7 +27,7 @@ export default function AdminLogin() {
     await new Promise(resolve => setTimeout(resolve, 800));
 
     // Simple credential check without JWT
-    if (username === 'rifadkp' && password === 'rifadkp123') {
+    if (username === 'admin' && password === 'adm1n#54321') {
       console.log('Login successful with direct credential check');
 
       // Store admin info in localStorage

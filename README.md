@@ -1,6 +1,10 @@
-# E-commerce Website
+# FreshMarket E-commerce Website
 
-A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB.
+A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB, featuring product categories, shopping cart functionality, and WhatsApp checkout integration.
+
+## Live Demo
+
+Frontend: [https://my-ecommerce-two-phi.vercel.app](https://my-ecommerce-two-phi.vercel.app)
 
 ## Features
 
@@ -22,13 +26,18 @@ A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB.
 - Express
 - MongoDB
 
-## Deployment
+## Project Structure
 
-- Frontend: Deployed on Vercel
-- Backend: Deployed on Render
-- Database: MongoDB Atlas
+```
+ecommerce-website/
+├── front-end/         # Next.js frontend application
+├── back-end/          # Express backend API
+├── DEVELOPMENT_SETUP.md  # Guide for development setup
+├── PRODUCTION_DEPLOYMENT.md  # Guide for production deployment
+└── README.md
+```
 
-## Getting Started
+## Quick Start
 
 ### Prerequisites
 - Node.js (v14 or later)
@@ -43,29 +52,57 @@ A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB.
    cd ecommerce-website
    ```
 
-2. Install dependencies for frontend
+2. Install all dependencies
    ```bash
-   cd frontend
-   npm install
+   npm run install-all
    ```
 
-3. Install dependencies for backend
-   ```bash
-   cd ../backend
-   npm install
-   ```
+3. Set up environment variables
+   - Create `.env` file in the back-end directory with:
+     ```
+     MONGO_URI=mongodb://localhost:27017/ecommerce
+     PORT=5000
+     JWT_SECRET=your_secret_key
+     CORS_ORIGIN=http://localhost:3000
+     ```
+   - Create `.env.local` file in the front-end directory with:
+     ```
+     NEXT_PUBLIC_API_URL=http://localhost:5000
+     NEXT_PUBLIC_WHATSAPP_NUMBER=your_whatsapp_number
+     NEXT_PUBLIC_SITE_NAME=FreshMarket
+     ```
 
-4. Set up environment variables
-   - Create `.env` file in the backend directory
-   - Create `.env.local` file in the frontend directory
+4. Seed the admin user
+   ```bash
+   npm run seed-admin
+   ```
 
 5. Run the development servers
-   - Frontend: `npm run dev` (in the frontend directory)
-   - Backend: `npm run dev` (in the backend directory)
+   ```bash
+   npm run dev
+   ```
+
+   This will start both the frontend (http://localhost:3000) and backend (http://localhost:5000) servers.
+
+## Admin Access
+
+After setting up, you can access the admin panel at:
+- Local: http://localhost:3000/admin/login
+- Production: https://my-ecommerce-two-phi.vercel.app/admin/login
+
+Use the credentials created by the seed-admin script:
+- Admin ID: rifadkp
+- Password: rifadkp123
+
+## Deployment
+
+For detailed deployment instructions, see:
+- [Development Setup Guide](DEVELOPMENT_SETUP.md) - For connecting Vercel frontend to local backend
+- [Production Deployment Guide](PRODUCTION_DEPLOYMENT.md) - For deploying both frontend and backend to production
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
 ## Acknowledgments
 
