@@ -4,7 +4,7 @@ A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB, 
 
 ## Live Demo
 
-- Frontend: [https://my-ecommerce-two-phi.vercel.app](https://my-ecommerce-two-phi.vercel.app)
+- Frontend: [https://my-ecommerce-black.vercel.app](https://my-ecommerce-black.vercel.app)
 - Backend: [https://my-ecommerce-production-11b0.up.railway.app](https://my-ecommerce-production-11b0.up.railway.app)
 
 ## Features
@@ -89,7 +89,7 @@ ecommerce-website/
 
 After setting up, you can access the admin panel at:
 - Local: http://localhost:3000/admin/login
-- Production: https://my-ecommerce-two-phi.vercel.app/admin/login
+- Production: https://my-ecommerce-black.vercel.app/admin/login
 
 Use the credentials created by the seed-admin script:
 - Admin ID: admin

@@ -22,10 +22,10 @@ This guide will help you set up your development environment to work with the e-
 
 3. Create a `.env` file in the back-end directory with the following content:
    ```
-   MONGO_URI=mongodb://localhost:27017/ecommerce
+   MONGO_URI=mongodb+srv://muhammedrifadkp3:merntest@tseepacademy.rxgap.mongodb.net/ecommerce
    PORT=5000
-   JWT_SECRET=your_secret_key
-   CORS_ORIGIN=https://my-ecommerce-two-phi.vercel.app
+   JWT_SECRET=XqU6R9CJgShZGOSnNjILPjlNhLv6Va78FvUBhJATj2M=
+   CORS_ORIGIN=https://my-ecommerce-black.vercel.app
    ```
 
 4. Seed the admin user (if needed):
@@ -110,7 +110,7 @@ If the frontend can't connect to the backend:
 ## Admin Access
 
 After setting up, you can access the admin panel at:
-https://my-ecommerce-two-phi.vercel.app/admin/login
+https://my-ecommerce-black.vercel.app/admin/login
 
 Use the credentials created by the seed-admin script:
 - Admin ID: admin

@@ -23,7 +23,7 @@ This guide will help you verify that your e-commerce website deployment is worki
 ## Frontend Verification (Vercel)
 
 1. **Check Frontend Connection to Backend**
-   - Open your browser and navigate to: [https://my-ecommerce-two-phi.vercel.app](https://my-ecommerce-two-phi.vercel.app)
+   - Open your browser and navigate to: [https://my-ecommerce-black.vercel.app](https://my-ecommerce-black.vercel.app)
    - Open the browser developer tools (F12)
    - Go to the Network tab
    - Refresh the page
@@ -36,7 +36,7 @@ This guide will help you verify that your e-commerce website deployment is worki
    - If no products appear, you may need to add some through the admin panel
 
 3. **Test Admin Login**
-   - Navigate to: [https://my-ecommerce-two-phi.vercel.app/admin/login](https://my-ecommerce-two-phi.vercel.app/admin/login)
+   - Navigate to: [https://my-ecommerce-black.vercel.app/admin/login](https://my-ecommerce-black.vercel.app/admin/login)
    - Log in with the admin credentials:
      - Username: admin
      - Password: adm1n#54321
@@ -53,7 +53,8 @@ If you see CORS errors in the browser console:
    ```javascript
    const corsOptions = {
      origin: [
-       process.env.CORS_ORIGIN || 'https://my-ecommerce-two-phi.vercel.app',
+       process.env.CORS_ORIGIN || 'https://my-ecommerce-black.vercel.app',
+       'https://my-ecommerce-two-phi.vercel.app',
        'http://localhost:3000'
      ],
      methods: ['GET', 'POST', 'PUT', 'DELETE'],
