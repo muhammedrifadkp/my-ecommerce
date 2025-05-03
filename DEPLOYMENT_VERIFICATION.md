@@ -2,19 +2,19 @@
 
 This guide will help you verify that your e-commerce website deployment is working correctly.
 
-## Backend Verification (Railway)
+## Backend Verification (Render)
 
 1. **Check the API Status**
-   - Open your browser and navigate to: [https://my-ecommerce-production-11b0.up.railway.app](https://my-ecommerce-production-11b0.up.railway.app)
+   - Open your browser and navigate to: [https://my-ecommerce-cwjr.onrender.com](https://my-ecommerce-cwjr.onrender.com)
    - You should see a JSON response with a status message indicating the API is running
 
 2. **Check Products API**
-   - Navigate to: [https://my-ecommerce-production-11b0.up.railway.app/api/products](https://my-ecommerce-production-11b0.up.railway.app/api/products)
+   - Navigate to: [https://my-ecommerce-cwjr.onrender.com/api/products](https://my-ecommerce-cwjr.onrender.com/api/products)
    - You should see a JSON response with your products data
    - If you haven't added any products yet, you might see an empty array
 
-3. **Check Railway Logs**
-   - Go to your Railway dashboard
+3. **Check Render Logs**
+   - Go to your Render dashboard
    - Select your e-commerce project
    - Click on the "Logs" tab
    - Look for any errors or warnings
@@ -70,7 +70,7 @@ If your frontend can't connect to the backend:
 
 1. Verify that the NEXT_PUBLIC_API_URL environment variable in Vercel is set to:
    ```
-   https://my-ecommerce-production-11b0.up.railway.app
+   https://my-ecommerce-cwjr.onrender.com
    ```
 
 2. Make sure the URL includes the `https://` protocol

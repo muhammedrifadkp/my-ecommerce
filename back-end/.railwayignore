@@ -1,5 +1,0 @@
-# Ignore files not needed in production
-node_modules
-.git
-.env.example
-*.log

@@ -5,7 +5,7 @@ A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB, 
 ## Live Demo
 
 - Frontend: [https://my-ecommerce-black.vercel.app](https://my-ecommerce-black.vercel.app)
-- Backend: [https://my-ecommerce-production-11b0.up.railway.app](https://my-ecommerce-production-11b0.up.railway.app)
+- Backend: [https://my-ecommerce-cwjr.onrender.com](https://my-ecommerce-cwjr.onrender.com)
 
 ## Features
 
