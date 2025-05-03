@@ -13,12 +13,25 @@ const app = express();
 
 // Configure CORS
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || 'https://my-ecommerce-two-phi.vercel.app',
+  origin: [
+    process.env.CORS_ORIGIN || 'https://my-ecommerce-two-phi.vercel.app',
+    'http://localhost:3000'  // Allow local development
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 };
 app.use(cors(corsOptions));
 app.use(express.json());
+
+// Test endpoint
+app.get('/', (_, res) => {
+  res.json({
+    message: 'E-commerce API is running!',
+    status: 'online',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
+});
 
 // API Routes
 app.use('/api/products', productRoutes);

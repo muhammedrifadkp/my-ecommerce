@@ -14,7 +14,7 @@ export default function ProductsPage() {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'my-ecommerce-production-11b0.up.railway.app'}/api/products`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'https://my-ecommerce-production-11b0.up.railway.app'}/api/products`);
 
         if (!response.ok) {
           throw new Error('Failed to fetch products');

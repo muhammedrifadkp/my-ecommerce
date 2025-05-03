@@ -4,7 +4,8 @@ A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB, 
 
 ## Live Demo
 
-Frontend: [https://my-ecommerce-two-phi.vercel.app](https://my-ecommerce-two-phi.vercel.app)
+- Frontend: [https://my-ecommerce-two-phi.vercel.app](https://my-ecommerce-two-phi.vercel.app)
+- Backend: [https://my-ecommerce-production-11b0.up.railway.app](https://my-ecommerce-production-11b0.up.railway.app)
 
 ## Features
 

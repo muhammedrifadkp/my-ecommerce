@@ -13,6 +13,6 @@
     }
   ],
   "env": {
-    "NEXT_PUBLIC_API_URL": "https://ecommerce-website-backend.onrender.com"
+    "NEXT_PUBLIC_API_URL": "https://my-ecommerce-production-11b0.up.railway.app"
   }
 }
