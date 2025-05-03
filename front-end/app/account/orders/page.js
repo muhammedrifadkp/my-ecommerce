@@ -120,7 +120,7 @@ export default function OrdersPage() {
                       <p className="text-xs text-gray-500">Qty: {item.quantity}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-medium">₹{item.price.toFixed(2)}</p>
+                      <p className="text-sm font-medium">AED{item.price.toFixed(2)}</p>
                     </div>
                   </div>
                 ))}
@@ -130,7 +130,7 @@ export default function OrdersPage() {
               <div className="p-4 bg-gray-50">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm text-gray-600">Total Amount:</span>
-                  <span className="text-lg font-semibold">₹{order.total.toFixed(2)}</span>
+                  <span className="text-lg font-semibold">AED{order.total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <Link

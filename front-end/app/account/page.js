@@ -152,7 +152,7 @@ export default function AccountPage() {
                   <p className="text-xs text-gray-500">{order.date}</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-sm font-medium">₹{order.total.toFixed(2)}</span>
+                  <span className="text-sm font-medium">AED{order.total.toFixed(2)}</span>
                   <p className="text-xs text-green-600">{order.status}</p>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function AccountPage() {
                   {order.items.map((item, index) => (
                     <li key={index} className="flex justify-between py-1">
                       <span>{item.name} × {item.quantity}</span>
-                      <span>₹{item.price.toFixed(2)}</span>
+                      <span>AED{item.price.toFixed(2)}</span>
                     </li>
                   ))}
                 </ul>

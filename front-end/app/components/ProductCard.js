@@ -128,7 +128,7 @@ export default function ProductCard({ product }) {
                 />
                 <div>
                   <h4 className="font-medium">{product.name}</h4>
-                  <p className="text-sm text-gray-500">Original: ₹{product.price}/{product.quantityUnit}</p>
+                  <p className="text-sm text-gray-500">Original: AED{product.price}/{product.quantityUnit}</p>
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function ProductCard({ product }) {
               {/* Price Input */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Price (₹)
+                  Price (AED)
                 </label>
                 <input
                   type="number"
@@ -187,10 +187,10 @@ export default function ProductCard({ product }) {
             <div className="bg-gray-50 p-3 rounded-md mb-4">
               <div className="flex justify-between items-center">
                 <span className="font-medium">Total:</span>
-                <span className="font-bold text-lg">₹{totalPrice}</span>
+                <span className="font-bold text-lg">AED{totalPrice}</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
-                {quantity} {selectedUnit} × ₹{customPrice}/{product.quantityUnit}
+                {quantity} {selectedUnit} × AED{customPrice}/{product.quantityUnit}
               </div>
             </div>
 

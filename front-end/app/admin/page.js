@@ -301,7 +301,7 @@ export default function AdminDashboard() {
                               <div className="text-sm font-medium text-gray-900">{product.name}</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="text-sm text-gray-500">₹{product.price}/{product.quantityUnit}</div>
+                              <div className="text-sm text-gray-500">AED{product.price}/{product.quantityUnit}</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
@@ -380,7 +380,7 @@ export default function AdminDashboard() {
                               <div className="text-sm font-medium text-gray-900">{product.name}</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="text-sm text-gray-500">₹{product.price}/{product.quantityUnit}</div>
+                              <div className="text-sm text-gray-500">AED{product.price}/{product.quantityUnit}</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
@@ -459,7 +459,7 @@ export default function AdminDashboard() {
                               <div className="text-sm font-medium text-gray-900">{product.name}</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="text-sm text-gray-500">₹{product.price}/{product.quantityUnit}</div>
+                              <div className="text-sm text-gray-500">AED{product.price}/{product.quantityUnit}</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
