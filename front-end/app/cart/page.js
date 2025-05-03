@@ -153,9 +153,9 @@ export default function CartPage() {
                   <div className="flex justify-between">
                     <div>
                       <p className="font-medium">{item.name}</p>
-                      <p className="text-sm text-gray-500">AED{item.price}/{item.quantityUnit}</p>
+                      <p className="text-sm text-gray-500">AED {item.price}/{item.quantityUnit}</p>
                     </div>
-                    <p className="font-bold">AED{(parseFloat(item.price) * item.quantity).toFixed(2)}</p>
+                    <p className="font-bold">AED {(parseFloat(item.price) * item.quantity).toFixed(2)}</p>
                   </div>
                   <div className="flex items-center justify-between mt-2">
                     <div className="flex items-center space-x-2">
@@ -193,15 +193,15 @@ export default function CartPage() {
           <div className="space-y-2">
             <div className="flex justify-between text-gray-600">
               <span>Subtotal</span>
-              <span>AED{totalPrice.toFixed(2)}</span>
+              <span>AED {totalPrice.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-gray-600">
               <span>Shipping Fee</span>
-              <span>AED{shippingFee.toFixed(2)}</span>
+              <span>AED {shippingFee.toFixed(2)}</span>
             </div>
             <div className="border-t pt-2 mt-2 flex justify-between font-bold">
               <span>Total</span>
-              <span>AED{grandTotal.toFixed(2)}</span>
+              <span>AED {grandTotal.toFixed(2)}</span>
             </div>
           </div>
         </div> */}
@@ -221,7 +221,7 @@ export default function CartPage() {
           <div className="bg-white rounded-lg p-4 shadow-lg">
             <div className="flex justify-between items-center mb-2">
               <span className="text-gray-500">Total Amound</span>
-              <span className="font-bold text-lg">AED{grandTotal.toFixed(2)}</span>
+              <span className="font-bold text-lg">AED {grandTotal.toFixed(2)}</span>
             </div>
             <button
               onClick={handleCheckout}

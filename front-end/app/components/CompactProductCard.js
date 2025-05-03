@@ -107,7 +107,7 @@ export default function CompactProductCard({ product }) {
       <div className="p-3">
         <h3 className="font-medium text-sm mb-1 truncate">{product.name || 'Unnamed Product'}</h3>
         <div className="flex justify-between items-center mb-2">
-          <p className="text-green-600 font-semibold">AED{product.price || '0'}/{product.quantityUnit || 'unit'}</p>
+          <p className="text-green-600 font-semibold">AED {product.price || '0'}/{product.quantityUnit || 'unit'}</p>
           {product.rating && (
             <div className="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
@@ -175,7 +175,7 @@ export default function CompactProductCard({ product }) {
                 </div>
                 <div>
                   <h4 className="font-medium">{product.name}</h4>
-                  <p className="text-sm text-gray-500">Original: AED{product.price}/{product.quantityUnit}</p>
+                  <p className="text-sm text-gray-500">Original: AED {product.price}/{product.quantityUnit}</p>
                 </div>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function CompactProductCard({ product }) {
               {/* Price Input */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Price (AED)
+                  Price (AED )
                 </label>
                 <input
                   type="number"
@@ -243,10 +243,10 @@ export default function CompactProductCard({ product }) {
             <div className="bg-gray-50 p-3 rounded-md mb-4">
               <div className="flex justify-between items-center">
                 <span className="font-medium">Total:</span>
-                <span className="font-bold text-lg">AED{totalPrice}</span>
+                <span className="font-bold text-lg">AED {totalPrice}</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
-                {quantity} {selectedUnit} × AED{customPrice}/{product.quantityUnit}
+                {quantity} {selectedUnit} × AED {customPrice}/{product.quantityUnit}
               </div>
             </div>
 

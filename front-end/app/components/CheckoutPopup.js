@@ -53,10 +53,10 @@ const CheckoutPopup = ({ onClose, cartItems, totalPrice }) => {
 
     message += `*Order Items*\n`;
     cartItems.forEach(item => {
-      message += `${item.name} (${item.quantity} x AED${item.price}) = AED${(parseFloat(item.price) * item.quantity).toFixed(2)}\n`;
+      message += `${item.name} (${item.quantity} x AED ${item.price}) = AED ${(parseFloat(item.price) * item.quantity).toFixed(2)}\n`;
     });
 
-    message += `\n*Total Amount: AED${totalPrice.toFixed(2)}*`;
+    message += `\n*Total Amount: AED ${totalPrice.toFixed(2)}*`;
 
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);

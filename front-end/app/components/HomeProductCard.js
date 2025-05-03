@@ -88,7 +88,7 @@ export default function HomeProductCard({ product }) {
         )}
       </div>
       <p className="text-sm font-semibold truncate">{product.name}</p>
-      <p className="text-green-600 text-xs">AED{product.price}/{product.quantityUnit}</p>
+      <p className="text-green-600 text-xs">AED {product.price}/{product.quantityUnit}</p>
       <button
         onClick={() => setShowPopup(true)}
         className="mt-1 w-full text-xs bg-green-600 text-white rounded py-1 hover:bg-green-700 transition-colors"
@@ -136,7 +136,7 @@ export default function HomeProductCard({ product }) {
                 )}
                 <div>
                   <h4 className="font-medium">{product.name}</h4>
-                  <p className="text-sm text-gray-500">Original: AED{product.price}/{product.quantityUnit}</p>
+                  <p className="text-sm text-gray-500">Original: AED {product.price}/{product.quantityUnit}</p>
                 </div>
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function HomeProductCard({ product }) {
               {/* Price Input */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Price (AED)
+                  Price (AED )
                 </label>
                 <input
                   type="number"
@@ -195,10 +195,10 @@ export default function HomeProductCard({ product }) {
             <div className="bg-gray-50 p-3 rounded-md mb-4">
               <div className="flex justify-between items-center">
                 <span className="font-medium">Total:</span>
-                <span className="font-bold text-lg">AED{totalPrice}</span>
+                <span className="font-bold text-lg">AED {totalPrice}</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
-                {quantity} {selectedUnit} × AED{customPrice}/{product.quantityUnit}
+                {quantity} {selectedUnit} × AED {customPrice}/{product.quantityUnit}
               </div>
             </div>
 
