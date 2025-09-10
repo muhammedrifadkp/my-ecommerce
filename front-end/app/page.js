@@ -58,9 +58,94 @@ export default function Home() {
           throw new Error(`API responded with status: ${response.status}`);
         }
       } catch (error) {
-        console.error('Failed to fetch from API:', error);
-        console.log('API not available, no fallback products will be shown');
-        setPopularProducts([]);
+        console.error('Failed to fetch from API, using sample products:', error);
+        
+        // Sample fallback products when backend is not available
+        const sampleProducts = [
+          {
+            _id: '1',
+            name: 'Premium Almonds',
+            category: 'nuts',
+            price: '45',
+            originalPrice: '55',
+            quantityUnit: '500g',
+            image: 'https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=500',
+            description: 'Premium California almonds, rich in protein and healthy fats',
+            featured: true
+          },
+          {
+            _id: '2',
+            name: 'Medjool Dates',
+            category: 'dates',
+            price: '38',
+            quantityUnit: '250g',
+            image: 'https://images.pexels.com/photos/5966630/pexels-photo-5966630.jpeg?auto=compress&cs=tinysrgb&w=500',
+            description: 'Large, soft and sweet Medjool dates from Jordan',
+            featured: true
+          },
+          {
+            _id: '3',
+            name: 'Mixed Dried Fruits',
+            category: 'dried-fruits',
+            price: '42',
+            quantityUnit: '300g',
+            image: 'https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=500',
+            description: 'Exotic blend of dried apricots, figs, and cranberries'
+          },
+          {
+            _id: '4',
+            name: 'Turkish Pistachios',
+            category: 'nuts',
+            price: '65',
+            originalPrice: '75',
+            quantityUnit: '400g',
+            image: 'https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=500',
+            description: 'Premium Turkish pistachios, perfectly roasted and salted'
+          },
+          {
+            _id: '5',
+            name: 'Cashew Nuts',
+            category: 'nuts',
+            price: '55',
+            quantityUnit: '350g',
+            image: 'https://images.pexels.com/photos/1571774/pexels-photo-1571774.jpeg?auto=compress&cs=tinysrgb&w=500',
+            description: 'Creamy and buttery cashews from Vietnam'
+          },
+          {
+            _id: '6',
+            name: 'Premium Walnuts',
+            category: 'nuts',
+            price: '48',
+            quantityUnit: '400g',
+            image: 'https://images.pexels.com/photos/1326884/pexels-photo-1326884.jpeg?auto=compress&cs=tinysrgb&w=500',
+            description: 'Fresh California walnuts, rich in omega-3 fatty acids'
+          },
+          {
+            _id: '7',
+            name: 'Dried Figs',
+            category: 'dried-fruits',
+            price: '52',
+            quantityUnit: '300g',
+            image: 'https://images.pexels.com/photos/5946030/pexels-photo-5946030.jpeg?auto=compress&cs=tinysrgb&w=500',
+            description: 'Sweet and chewy Turkish figs, naturally sun-dried'
+          },
+          {
+            _id: '8',
+            name: 'Dried Apricots',
+            category: 'dried-fruits',
+            price: '35',
+            quantityUnit: '250g',
+            image: 'https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=500',
+            description: 'Sweet and chewy Turkish apricots, naturally dried'
+          }
+        ];
+        
+        // Store sample products for shuffling
+        setAllProducts(sampleProducts);
+        
+        // Display random selection of sample products
+        const randomProducts = shuffleProducts(sampleProducts, 8);
+        setPopularProducts(randomProducts);
       } finally {
         setLoading(false);
       }
@@ -334,8 +419,11 @@ export default function Home() {
                 Popular Products
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl">
-                Random selection from our premium collection. 
-                {allProducts.length > 0 && `Showing 8 of ${allProducts.length} products.`}
+                {allProducts.length > 0 ? (
+                  `Random selection from our premium collection. Showing 8 of ${allProducts.length} products.`
+                ) : (
+                  'Our customers\' favorite premium selections, loved for their exceptional quality and exquisite taste.'
+                )}
               </p>
             </div>
             <div className="flex items-center space-x-4">
