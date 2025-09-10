@@ -31,12 +31,24 @@ export default function ProductCard({ product }) {
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const [currentImageSrc, setCurrentImageSrc] = useState(product.image);
   const { addToCart } = useCart();
 
   // Calculate total price whenever quantity, customPrice, or selectedUnit changes
   useEffect(() => {
     calculateTotal();
   }, [quantity, customPrice, selectedUnit]);
+
+  const handleImageError = () => {
+    if (product.fallbackImage && currentImageSrc !== product.fallbackImage) {
+      // Try fallback image
+      setCurrentImageSrc(product.fallbackImage);
+      setImageLoaded(false);
+    } else {
+      // Show emoji fallback
+      setImageError(true);
+    }
+  };
 
   const calculateTotal = () => {
     let unitMultiplier = 1;
@@ -120,14 +132,14 @@ export default function ProductCard({ product }) {
 
         {/* Product Image Container */}
         <div className="relative h-64 md:h-72 overflow-hidden rounded-t-3xl bg-gradient-to-br from-neutral-100 to-neutral-200">
-          {!imageError && product.image ? (
+          {!imageError && currentImageSrc ? (
             <Image
-              src={product.image}
+              src={currentImageSrc}
               alt={product.name}
               fill
               className={`product-image object-cover transition-all duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               onLoad={() => setImageLoaded(true)}
-              onError={() => setImageError(true)}
+              onError={handleImageError}
               priority={product.featured}
             />
           ) : (
@@ -253,9 +265,9 @@ export default function ProductCard({ product }) {
             <div className="relative p-6 border-b border-neutral-200">
               <div className="flex items-center space-x-4">
                 <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100">
-                  {product.image && !imageError ? (
+                  {currentImageSrc && !imageError ? (
                     <Image
-                      src={product.image}
+                      src={currentImageSrc}
                       alt={product.name}
                       fill
                       className="object-cover"

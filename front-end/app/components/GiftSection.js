@@ -394,6 +394,7 @@ export default function GiftSection() {
                                         onClick={() => handleGiftSelect(giftPackage)}
                                         className="btn-primary interactive flex items-center space-x-2"
                                         aria-label={`Customize ${giftPackage.name}`}
+                                        suppressHydrationWarning
                                     >
                                         <FiEdit3 className="w-4 h-4" />
                                         <span>Customize</span>
@@ -529,6 +530,7 @@ export default function GiftSection() {
                                         ? 'bg-primary-500 scale-125'
                                         : 'bg-neutral-300 hover:bg-neutral-400'
                                         }`}
+                                    suppressHydrationWarning
                                 />
                             ))}
                         </div>

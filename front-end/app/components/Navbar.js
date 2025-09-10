@@ -265,6 +265,7 @@ export default function Navbar() {
                       onChange={(e) => setSearchQuery(e.target.value)}
                       className={`relative w-full pl-14 pr-28 py-3 text-base rounded-2xl border-2 transition-all duration-500 focus:outline-none focus:ring-4 focus:ring-offset-2 hover:shadow-2xl ${isScrolled ? 'bg-white/90 backdrop-blur-xl text-neutral-900 placeholder-neutral-500 border-neutral-200/50 focus:bg-white focus:shadow-2xl focus:ring-primary-500/50 focus:border-primary-300' : 'bg-white/20 backdrop-blur-xl text-white placeholder-white/80 border-white/30 focus:bg-white/30 focus:ring-white/30 focus:border-white/50'}`}
                       aria-describedby="search-description"
+                      suppressHydrationWarning
                     />
                     <span id="search-description" className="sr-only">
                       Search our collection of premium dry fruits, nuts, and dates
@@ -277,6 +278,7 @@ export default function Navbar() {
                       type="submit"
                       className={`absolute right-2 top-1/2 transform -translate-y-1/2 px-6 py-2.5 rounded-xl transition-all duration-500 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 hover:scale-105 ${isScrolled ? 'bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white shadow-lg hover:shadow-xl focus:ring-primary-500' : 'bg-white/25 hover:bg-white/35 text-white backdrop-blur-sm focus:ring-white/40 shadow-lg'}`}
                       aria-label="Submit search"
+                      suppressHydrationWarning
                     >
                       Search
                     </button>
@@ -292,6 +294,7 @@ export default function Navbar() {
                   className={`block md:hidden p-3 rounded-xl transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-offset-2 hover:scale-110 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center ${isScrolled ? 'text-neutral-700 bg-white hover:text-white hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-500 focus:ring-primary-500 hover:shadow-xl border border-neutral-200 shadow-md' : 'text-white bg-white/25 backdrop-blur-sm hover:bg-white/35 focus:ring-white/40 hover:shadow-xl border border-white/40 shadow-lg'}`}
                   aria-label={isSearchOpen ? 'Close search' : 'Open search'}
                   aria-expanded={isSearchOpen}
+                  suppressHydrationWarning
                 >
                   {isSearchOpen ? (
                     <FiX className="w-5 h-5" aria-hidden="true" />
@@ -361,6 +364,7 @@ export default function Navbar() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-12 pr-4 py-4 text-base rounded-xl border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white shadow-sm"
                 autoFocus
+                suppressHydrationWarning
               />
               <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-neutral-400 w-5 h-5" aria-hidden="true" />
             </form>

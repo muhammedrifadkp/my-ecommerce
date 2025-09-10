@@ -118,7 +118,7 @@ export default function HomeProductCard({ product }) {
                     src={product.image.includes('unsplash.com') ?
                       // Use a smaller, optimized image from Unsplash with lower quality
                       `${product.image.split('?')[0]}?q=60&w=150&fit=crop` :
-                      product.image
+                      product.image || product.fallbackImage
                     }
                     alt={product.name}
                     width={60}

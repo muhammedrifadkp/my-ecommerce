@@ -231,6 +231,7 @@ export default function PromoCarousel() {
           disabled={isTransitioning}
           className="absolute top-1/2 left-4 md:left-6 transform -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed opacity-0 group-hover:opacity-100 shadow-lg"
           aria-label="Previous slide"
+          suppressHydrationWarning
         >
           <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
         </button>
@@ -240,6 +241,7 @@ export default function PromoCarousel() {
           disabled={isTransitioning}
           className="absolute top-1/2 right-4 md:right-6 transform -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed opacity-0 group-hover:opacity-100 shadow-lg"
           aria-label="Next slide"
+          suppressHydrationWarning
         >
           <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
         </button>
@@ -257,6 +259,7 @@ export default function PromoCarousel() {
                     : 'w-3 md:w-4 h-3 md:h-4 bg-white/50 hover:bg-white/70'
                   } disabled:cursor-not-allowed`}
                 aria-label={`Go to slide ${index + 1}`}
+                suppressHydrationWarning
               />
             ))}
           </div>
@@ -283,6 +286,7 @@ export default function PromoCarousel() {
                 ? 'ring-4 ring-primary-500 shadow-lg scale-105'
                 : 'hover:scale-105 opacity-70 hover:opacity-100'
               } disabled:cursor-not-allowed`}
+            suppressHydrationWarning
           >
             <Image
               src={imageErrors[banner.id] ? banner.fallbackImage : banner.image}

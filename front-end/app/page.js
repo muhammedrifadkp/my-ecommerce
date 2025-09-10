@@ -22,7 +22,8 @@ export default function Home() {
       try {
         setLoading(true);
 
-        const response = await fetch('http://localhost:5000/api/products', {
+        const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://al-mashhour-api.onrender.com';
+        const response = await fetch(`${API_BASE_URL}/api/products`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -49,7 +50,7 @@ export default function Home() {
             price: '45',
             originalPrice: '55',
             quantityUnit: '500g',
-            image: '/images/products/almonds.jpg', // REPLACE: Add your almonds image here
+            image: 'https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=500',
             fallbackImage: 'https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=500',
             description: 'Premium California almonds, rich in protein and healthy fats',
             featured: true
@@ -60,7 +61,7 @@ export default function Home() {
             category: 'dates',
             price: '38',
             quantityUnit: '250g',
-            image: '/images/products/dates.jpg', // REPLACE: Add your dates image here
+            image: 'https://images.pexels.com/photos/5966630/pexels-photo-5966630.jpeg?auto=compress&cs=tinysrgb&w=500',
             fallbackImage: 'https://images.pexels.com/photos/5966630/pexels-photo-5966630.jpeg?auto=compress&cs=tinysrgb&w=500',
             description: 'Large, soft and sweet Medjool dates from Jordan',
             featured: true
@@ -71,7 +72,7 @@ export default function Home() {
             category: 'dried-fruits',
             price: '42',
             quantityUnit: '300g',
-            image: '/images/products/dried-fruits.jpg', // REPLACE: Add your dried fruits image here
+            image: 'https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=500',
             fallbackImage: 'https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=500',
             description: 'Exotic blend of dried apricots, figs, and cranberries'
           },
@@ -82,7 +83,7 @@ export default function Home() {
             price: '65',
             originalPrice: '75',
             quantityUnit: '400g',
-            image: '/images/products/pistachios.jpg', // REPLACE: Add your pistachios image here
+            image: 'https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=500',
             fallbackImage: 'https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=500',
             description: 'Premium Turkish pistachios, perfectly roasted and salted'
           },
@@ -92,7 +93,7 @@ export default function Home() {
             category: 'nuts',
             price: '55',
             quantityUnit: '350g',
-            image: '/images/products/cashews.jpg', // REPLACE: Add your cashews image here
+            image: 'https://images.pexels.com/photos/1571774/pexels-photo-1571774.jpeg?auto=compress&cs=tinysrgb&w=500',
             fallbackImage: 'https://images.pexels.com/photos/1571774/pexels-photo-1571774.jpeg?auto=compress&cs=tinysrgb&w=500',
             description: 'Creamy and buttery cashews from Vietnam'
           },
@@ -102,7 +103,7 @@ export default function Home() {
             category: 'nuts',
             price: '48',
             quantityUnit: '400g',
-            image: '/images/products/walnuts.jpg', // REPLACE: Add your walnuts image here
+            image: 'https://images.pexels.com/photos/1326884/pexels-photo-1326884.jpeg?auto=compress&cs=tinysrgb&w=500',
             fallbackImage: 'https://images.pexels.com/photos/1326884/pexels-photo-1326884.jpeg?auto=compress&cs=tinysrgb&w=500',
             description: 'Fresh California walnuts, rich in omega-3 fatty acids'
           },
@@ -112,7 +113,7 @@ export default function Home() {
             category: 'dried-fruits',
             price: '35',
             quantityUnit: '250g',
-            image: '/images/products/apricots.jpg', // REPLACE: Add your apricots image here
+            image: 'https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=500',
             fallbackImage: 'https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=500',
             description: 'Sweet and chewy Turkish apricots, naturally dried'
           }
@@ -453,10 +454,12 @@ export default function Home() {
                 type="email"
                 placeholder="Enter your email address"
                 className="flex-1 px-6 py-4 rounded-2xl border-0 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/40 focus:bg-white/30 transition-all duration-300"
+                suppressHydrationWarning
               />
               <button
                 type="submit"
                 className="btn-secondary btn-lg whitespace-nowrap"
+                suppressHydrationWarning
               >
                 Subscribe Now
               </button>
