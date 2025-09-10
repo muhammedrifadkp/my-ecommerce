@@ -15,8 +15,7 @@ const app = express();
 // Configure CORS
 const corsOptions = {
   origin: [
-    process.env.CORS_ORIGIN || 'https://my-ecommerce-black.vercel.app',
-    'https://my-ecommerce-two-phi.vercel.app',
+    process.env.CORS_ORIGIN || 'https://al-mashhour.vercel.app',
     'http://localhost:3000'  // Allow local development
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],

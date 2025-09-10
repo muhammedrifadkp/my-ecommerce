@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://my-ecommerce-production-11b0.up.railway.app',
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://al-mashhour-api.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -40,6 +40,17 @@ export const apiClient = {
   getProductsByCategory: async (category) => {
     try {
       return await api.get(`/api/products/${category}`);
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  searchProducts: async (query) => {
+    try {
+      if (!query || query.trim().length < 2) {
+        throw new Error('Search query must be at least 2 characters long');
+      }
+      return await api.get(`/api/products?search=${encodeURIComponent(query.trim())}`);
     } catch (error) {
       throw error;
     }

@@ -37,7 +37,7 @@ This guide will help you deploy your e-commerce website backend to Render.
 2. Click "New" → "Web Service"
 3. Connect your GitHub repository
 4. Configure the service:
-   - **Name**: `my-ecommerce`
+   - **Name**: `al-mashhour-api`
    - **Root Directory**: `back-end`
    - **Environment**: `Node`
    - **Build Command**: `npm install`
@@ -47,17 +47,17 @@ This guide will help you deploy your e-commerce website backend to Render.
      - `NODE_ENV`: `production`
      - `MONGODB_URI`: `mongodb+srv://muhammedrifadkp3:merntest@tseepacademy.rxgap.mongodb.net/ecommerce`
      - `JWT_SECRET`: `XqU6R9CJgShZGOSnNjILPjlNhLv6Va78FvUBhJATj2M=`
-     - `CORS_ORIGIN`: `https://my-ecommerce-black.vercel.app`
+     - `CORS_ORIGIN`: `https://al-mashhour.vercel.app`
 5. Click "Create Web Service"
 6. Wait for the deployment to complete
-7. Note the URL of your deployed backend (e.g., `https://my-ecommerce-cwjr.onrender.com`)
+7. Note the URL of your deployed backend (e.g., `https://al-mashhour-api.onrender.com`)
 
 ## Step 4: Update Frontend Configuration
 
 1. Go to your Vercel project dashboard
 2. Navigate to Settings > Environment Variables
 3. Add or update the following environment variables:
-   - `NEXT_PUBLIC_API_URL`: Your Render backend URL (e.g., `https://my-ecommerce-cwjr.onrender.com`)
+   - `NEXT_PUBLIC_API_URL`: Your Render backend URL (e.g., `https://al-mashhour-api.onrender.com`)
 4. Redeploy your frontend
 
 ## Step 5: Seed Admin User

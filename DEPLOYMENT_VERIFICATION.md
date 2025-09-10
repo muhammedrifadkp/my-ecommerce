@@ -5,11 +5,11 @@ This guide will help you verify that your e-commerce website deployment is worki
 ## Backend Verification (Render)
 
 1. **Check the API Status**
-   - Open your browser and navigate to: [https://my-ecommerce-cwjr.onrender.com](https://my-ecommerce-cwjr.onrender.com)
+   - Open your browser and navigate to: [https://al-mashhour-api.onrender.com](https://al-mashhour-api.onrender.com)
    - You should see a JSON response with a status message indicating the API is running
 
 2. **Check Products API**
-   - Navigate to: [https://my-ecommerce-cwjr.onrender.com/api/products](https://my-ecommerce-cwjr.onrender.com/api/products)
+   - Navigate to: [https://al-mashhour-api.onrender.com/api/products](https://al-mashhour-api.onrender.com/api/products)
    - You should see a JSON response with your products data
    - If you haven't added any products yet, you might see an empty array
 
@@ -23,7 +23,7 @@ This guide will help you verify that your e-commerce website deployment is worki
 ## Frontend Verification (Vercel)
 
 1. **Check Frontend Connection to Backend**
-   - Open your browser and navigate to: [https://my-ecommerce-black.vercel.app](https://my-ecommerce-black.vercel.app)
+   - Open your browser and navigate to: [https://al-mashhour.vercel.app](https://al-mashhour.vercel.app)
    - Open the browser developer tools (F12)
    - Go to the Network tab
    - Refresh the page
@@ -31,12 +31,12 @@ This guide will help you verify that your e-commerce website deployment is worki
    - Verify that they are successful (status 200)
 
 2. **Test Product Browsing**
-   - Click on the different category links (Vegetables, Fruits, Meat)
+   - Click on the different category links (Premium Dry Fruits, Nuts & Seeds, Dates & Exotic Items)
    - Verify that products are loading correctly
    - If no products appear, you may need to add some through the admin panel
 
 3. **Test Admin Login**
-   - Navigate to: [https://my-ecommerce-black.vercel.app/admin/login](https://my-ecommerce-black.vercel.app/admin/login)
+   - Navigate to: [https://al-mashhour.vercel.app/admin/login](https://al-mashhour.vercel.app/admin/login)
    - Log in with the admin credentials:
      - Username: admin
      - Password: adm1n#54321
@@ -53,8 +53,7 @@ If you see CORS errors in the browser console:
    ```javascript
    const corsOptions = {
      origin: [
-       process.env.CORS_ORIGIN || 'https://my-ecommerce-black.vercel.app',
-       'https://my-ecommerce-two-phi.vercel.app',
+       process.env.CORS_ORIGIN || 'https://al-mashhour.vercel.app',
        'http://localhost:3000'
      ],
      methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -70,7 +69,7 @@ If your frontend can't connect to the backend:
 
 1. Verify that the NEXT_PUBLIC_API_URL environment variable in Vercel is set to:
    ```
-   https://my-ecommerce-cwjr.onrender.com
+   https://al-mashhour-api.onrender.com
    ```
 
 2. Make sure the URL includes the `https://` protocol

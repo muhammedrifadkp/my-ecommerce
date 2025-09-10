@@ -38,7 +38,7 @@ This guide will help you deploy your e-commerce website to production, with the 
 2. Click "New" → "Web Service"
 3. Connect your GitHub repository
 4. Configure the service:
-   - **Name**: `ecommerce-website-backend`
+   - **Name**: `al-mashhour-backend`
    - **Root Directory**: `back-end`
    - **Environment**: `Node`
    - **Build Command**: `npm install`
@@ -48,19 +48,19 @@ This guide will help you deploy your e-commerce website to production, with the 
      - `NODE_ENV`: `production`
      - `MONGODB_URI`: `mongodb+srv://muhammedrifadkp3:merntest@tseepacademy.rxgap.mongodb.net/ecommerce`
      - `JWT_SECRET`: A secure random string (e.g., `XqU6R9CJgShZGOSnNjILPjlNhLv6Va78FvUBhJATj2M=`)
-     - `CORS_ORIGIN`: Your Vercel frontend URL (`https://my-ecommerce-black.vercel.app`)
+     - `CORS_ORIGIN`: Your Vercel frontend URL (`https://al-mashhour.vercel.app`)
 5. Click "Create Web Service"
 6. Wait for the deployment to complete
-7. Note the URL of your deployed backend (`https://my-ecommerce-production-11b0.up.railway.app`)
+7. Note the URL of your deployed backend (`https://al-mashhour-api.onrender.com`)
 
 ## Step 4: Update Frontend Configuration for Production
 
 1. Go to your Vercel project dashboard
 2. Navigate to Settings > Environment Variables
 3. Add or update the following environment variables:
-   - `NEXT_PUBLIC_API_URL`: Your Railway backend URL (`https://my-ecommerce-production-11b0.up.railway.app`)
+   - `NEXT_PUBLIC_API_URL`: Your Render backend URL (`https://al-mashhour-api.onrender.com`)
    - `NEXT_PUBLIC_WHATSAPP_NUMBER`: Your WhatsApp number
-   - `NEXT_PUBLIC_SITE_NAME`: Your site name (e.g., `FreshMarket`)
+   - `NEXT_PUBLIC_SITE_NAME`: Your site name (e.g., `Al MASHHOUR`)
 4. Redeploy your frontend
 
 ## Step 5: Seed Admin User

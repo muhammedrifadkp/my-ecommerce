@@ -25,7 +25,7 @@ This guide will help you set up your development environment to work with the e-
    MONGO_URI=mongodb+srv://muhammedrifadkp3:merntest@tseepacademy.rxgap.mongodb.net/ecommerce
    PORT=5000
    JWT_SECRET=XqU6R9CJgShZGOSnNjILPjlNhLv6Va78FvUBhJATj2M=
-   CORS_ORIGIN=https://my-ecommerce-black.vercel.app
+   CORS_ORIGIN=https://al-mashhour.vercel.app
    ```
 
 4. Seed the admin user (if needed):
@@ -76,7 +76,7 @@ For a more permanent solution, consider deploying your backend to a hosting serv
 
 ## Testing the Connection
 
-1. Visit your Vercel frontend: https://my-ecommerce-two-phi.vercel.app
+1. Visit your Vercel frontend: https://al-mashhour.vercel.app
 2. Open the browser developer tools (F12)
 3. Check the Network tab to ensure API requests are successfully connecting to your backend
 4. Try to browse products, add items to cart, and test the admin functionality
@@ -90,7 +90,7 @@ If you see CORS errors in the console:
 1. Make sure your backend CORS configuration is correct:
    ```javascript
    const corsOptions = {
-     origin: process.env.CORS_ORIGIN || 'https://my-ecommerce-two-phi.vercel.app',
+     origin: process.env.CORS_ORIGIN || 'https://al-mashhour.vercel.app',
      methods: ['GET', 'POST', 'PUT', 'DELETE'],
      credentials: true
    };

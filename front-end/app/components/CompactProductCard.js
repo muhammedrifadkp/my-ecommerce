@@ -67,7 +67,7 @@ export default function CompactProductCard({ product }) {
         <div className="relative h-40 overflow-hidden">
           {product.image ? (
             <Image
-              src={product.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=300&fit=crop&auto=format'}
+              src={product.image || '/images/products/placeholder.jpg'} // REPLACE: Add your product placeholder image here
               alt={product.name}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -108,8 +108,9 @@ export default function CompactProductCard({ product }) {
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {product.category && (
               <span className={`text-xs px-2 py-1 rounded-full font-medium ${
-                product.category?.toLowerCase() === 'vegetables' ? 'bg-success-100 text-success-800' :
-                product.category?.toLowerCase() === 'fruits' ? 'bg-secondary-100 text-secondary-800' :
+                product.category?.toLowerCase() === 'premium-dry-fruits' ? 'bg-amber-100 text-amber-800' :
+                product.category?.toLowerCase() === 'nuts-seeds' ? 'bg-secondary-100 text-secondary-800' :
+                product.category?.toLowerCase() === 'dates-exotic' ? 'bg-success-100 text-success-800' :
                 'bg-red-100 text-red-800'
               }`}>
                 {product.category}
@@ -217,7 +218,7 @@ export default function CompactProductCard({ product }) {
               <div className="flex items-center mb-6">
                 <div className="relative w-20 h-20 mr-4 rounded-2xl overflow-hidden shadow-medium">
                   <Image
-                    src={product.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=300&fit=crop&auto=format'}
+                    src={product.image || '/images/products/placeholder.jpg'} // REPLACE: Add your product placeholder image here
                     alt={product.name}
                     fill
                     className="object-cover"
@@ -231,8 +232,9 @@ export default function CompactProductCard({ product }) {
                   </p>
                   {product.category && (
                     <span className={`text-xs px-2 py-1 rounded-full font-medium ${
-                      product.category?.toLowerCase() === 'vegetables' ? 'bg-success-100 text-success-800' :
-                      product.category?.toLowerCase() === 'fruits' ? 'bg-secondary-100 text-secondary-800' :
+                      product.category?.toLowerCase() === 'premium-dry-fruits' ? 'bg-amber-100 text-amber-800' :
+                      product.category?.toLowerCase() === 'nuts-seeds' ? 'bg-secondary-100 text-secondary-800' :
+                      product.category?.toLowerCase() === 'dates-exotic' ? 'bg-success-100 text-success-800' :
                       'bg-red-100 text-red-800'
                     }`}>
                       {product.category}

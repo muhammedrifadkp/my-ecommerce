@@ -3,10 +3,25 @@ import express from 'express';
 import Product from '../models/Product.js';
 const router = express.Router();
 
-// Get all products
+// Get all products with optional search query
 router.get('/', async (req, res) => {
   try {
-    const products = await Product.find({});
+    const { search } = req.query;
+    let query = {};
+
+    // If search query is provided, filter products
+    if (search && search.trim()) {
+      const searchRegex = new RegExp(search.trim(), 'i'); // Case-insensitive search
+      query = {
+        $or: [
+          { name: { $regex: searchRegex } },
+          { description: { $regex: searchRegex } },
+          { category: { $regex: searchRegex } }
+        ]
+      };
+    }
+
+    const products = await Product.find(query);
     res.json(products);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -95,6 +110,36 @@ router.delete('/:id', async (req, res) => {
 
     await Product.findByIdAndDelete(req.params.id);
     res.json({ message: 'Product removed' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Dedicated search endpoint for better performance
+router.get('/search/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+
+    if (!query || query.trim().length < 2) {
+      return res.status(400).json({ error: 'Search query must be at least 2 characters long' });
+    }
+
+    const searchRegex = new RegExp(query.trim(), 'i');
+    const searchQuery = {
+      $or: [
+        { name: { $regex: searchRegex } },
+        { description: { $regex: searchRegex } },
+        { category: { $regex: searchRegex } }
+      ]
+    };
+
+    const products = await Product.find(searchQuery);
+
+    res.json({
+      query: query.trim(),
+      results: products,
+      count: products.length
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

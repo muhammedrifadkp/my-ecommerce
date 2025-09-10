@@ -8,6 +8,7 @@ export function UserProvider({ children }) {
   const [userDetails, setUserDetails] = useState(null);
   const [orderHistory, setOrderHistory] = useState([]);
   const [showDetailsPopup, setShowDetailsPopup] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     // Load user details and order history from localStorage on initial load
@@ -15,12 +16,26 @@ export function UserProvider({ children }) {
     const savedOrders = localStorage.getItem('orderHistory');
 
     if (savedDetails) {
-      setUserDetails(JSON.parse(savedDetails));
+      try {
+        const parsedDetails = JSON.parse(savedDetails);
+        setUserDetails(parsedDetails);
+      } catch (error) {
+        console.error('Error parsing user details:', error);
+        localStorage.removeItem('userDetails');
+      }
     }
 
     if (savedOrders) {
-      setOrderHistory(JSON.parse(savedOrders));
+      try {
+        const parsedOrders = JSON.parse(savedOrders);
+        setOrderHistory(parsedOrders);
+      } catch (error) {
+        console.error('Error parsing order history:', error);
+        localStorage.removeItem('orderHistory');
+      }
     }
+
+    setIsLoaded(true);
   }, []);
 
   // Save user details to localStorage and context
@@ -37,8 +52,19 @@ export function UserProvider({ children }) {
     setOrderHistory(newOrderHistory);
   };
 
-  // Check if user details exist, if not show popup
-  const checkUserDetails = () => {
+  // Check if user details exist, only show popup if explicitly requested
+  const checkUserDetails = (forceShow = false) => {
+    if (!userDetails) {
+      if (forceShow) {
+        setShowDetailsPopup(true);
+      }
+      return false;
+    }
+    return true;
+  };
+
+  // Function to explicitly request user details (for checkout, etc.)
+  const requestUserDetails = () => {
     if (!userDetails) {
       setShowDetailsPopup(true);
       return false;
@@ -53,8 +79,10 @@ export function UserProvider({ children }) {
       showDetailsPopup,
       setShowDetailsPopup,
       checkUserDetails,
+      requestUserDetails,
       orderHistory,
-      addOrder
+      addOrder,
+      isLoaded
     }}>
       {children}
     </UserContext.Provider>

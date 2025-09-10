@@ -18,29 +18,34 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "FreshMarket - Premium Online Grocery Store",
-  description: "Discover fresh vegetables, fruits, and premium meat delivered to your doorstep. Experience the finest quality groceries with our modern e-commerce platform.",
-  keywords: "grocery, fresh vegetables, fruits, meat, online shopping, food delivery",
-  authors: [{ name: "FreshMarket Team" }],
-  creator: "FreshMarket",
-  publisher: "FreshMarket",
+  title: "Al MASHHOUR - Premium Dry Fruits & Nuts",
+  description: "Discover premium dry fruits, nuts, and exotic dates delivered to your doorstep. Experience the finest quality products with our modern e-commerce platform.",
+  keywords: "dry fruits, nuts, dates, premium, luxury, online shopping, food delivery",
+  authors: [{ name: "Al MASHHOUR Team" }],
+  creator: "Al MASHHOUR",
+  publisher: "Al MASHHOUR",
+  icons: {
+    icon: '/logo-only.png',
+    shortcut: '/logo-only.png',
+    apple: '/logo-only.png',
+  },
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://my-ecommerce-black.vercel.app'),
+  metadataBase: new URL('https://al-mashhour.vercel.app'),
   openGraph: {
-    title: "FreshMarket - Premium Online Grocery Store",
-    description: "Discover fresh vegetables, fruits, and premium meat delivered to your doorstep.",
-    url: 'https://my-ecommerce-black.vercel.app',
-    siteName: 'FreshMarket',
+    title: "Al MASHHOUR - Premium Dry Fruits & Nuts",
+    description: "Discover premium dry fruits, nuts, and exotic dates delivered to your doorstep.",
+    url: 'https://al-mashhour.vercel.app',
+    siteName: 'Al MASHHOUR',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'FreshMarket - Premium Online Grocery Store',
+        alt: 'Al MASHHOUR - Premium Dry Fruits & Nuts',
       },
     ],
     locale: 'en_US',
@@ -48,8 +53,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "FreshMarket - Premium Online Grocery Store",
-    description: "Discover fresh vegetables, fruits, and premium meat delivered to your doorstep.",
+    title: 'Al MASHHOUR - Premium Dry Fruits & Nuts',
+    description: 'Discover premium dry fruits, nuts, and exotic dates delivered to your doorstep.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -85,9 +90,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/logo-only.png" sizes="any" />
+        <link rel="icon" href="/logo-only.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo-only.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="font-sans antialiased">

@@ -14,7 +14,7 @@ export default function CategoriesPage() {
     const fetchCategories = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'https://my-ecommerce-production-11b0.up.railway.app'}/api/products`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'https://al-mashhour-api.onrender.com'}/api/products`);
         if (!response.ok) throw new Error('Failed to fetch products');
         const products = await response.json();
 
@@ -24,7 +24,7 @@ export default function CategoriesPage() {
           return {
             _id: category,
             name: category,
-            image: product?.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=300&fit=crop&auto=format',
+            image: product?.image || '/images/products/placeholder.jpg', // REPLACE: Add your product placeholder image here
           };
         });
 

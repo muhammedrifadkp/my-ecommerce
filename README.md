@@ -1,15 +1,15 @@
-# FreshMarket E-commerce Website
+# Al MASHHOUR E-commerce Website
 
-A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB, featuring product categories, shopping cart functionality, and WhatsApp checkout integration.
+A premium e-commerce platform for luxury dry fruits and nuts, built with Next.js, Node.js, Express, and MongoDB, featuring exclusive product categories, shopping cart functionality, and WhatsApp checkout integration.
 
 ## Live Demo
 
-- Frontend: [https://my-ecommerce-black.vercel.app](https://my-ecommerce-black.vercel.app)
-- Backend: [https://my-ecommerce-cwjr.onrender.com](https://my-ecommerce-cwjr.onrender.com)
+- Frontend: [https://al-mashhour.vercel.app](https://al-mashhour.vercel.app)
+- Backend: [https://al-mashhour-api.onrender.com](https://al-mashhour-api.onrender.com)
 
 ## Features
 
-- **Product Categories**: Browse products by vegetables, fruits, and meat categories
+- **Product Categories**: Browse products by Premium Dry Fruits, Nuts & Seeds, and Dates & Exotic Items categories
 - **Shopping Cart**: Add products to cart with quantity selection
 - **User Accounts**: View order history and manage delivery information
 - **Admin Panel**: Manage products and view orders
@@ -30,7 +30,7 @@ A modern e-commerce platform built with Next.js, Node.js, Express, and MongoDB, 
 ## Project Structure
 
 ```
-ecommerce-website/
+al-mashhour/
 ├── front-end/         # Next.js frontend application
 ├── back-end/          # Express backend API
 ├── DEVELOPMENT_SETUP.md  # Guide for development setup
@@ -49,8 +49,8 @@ ecommerce-website/
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/muhammedrifadkp/ecommerce-website.git
-   cd ecommerce-website
+   git clone https://github.com/muhammedrifadkp/al-mashhour.git
+   cd al-mashhour
    ```
 
 2. Install all dependencies
@@ -70,7 +70,7 @@ ecommerce-website/
      ```
      NEXT_PUBLIC_API_URL=http://localhost:5000
      NEXT_PUBLIC_WHATSAPP_NUMBER=your_whatsapp_number
-     NEXT_PUBLIC_SITE_NAME=FreshMarket
+     NEXT_PUBLIC_SITE_NAME=Al MASHHOUR
      ```
 
 4. Seed the admin user
@@ -87,9 +87,9 @@ ecommerce-website/
 
 ## Admin Access
 
-After setting up, you can access the admin panel at:
+After setting up, you can access the Al MASHHOUR Admin Panel at:
 - Local: http://localhost:3000/admin/login
-- Production: https://my-ecommerce-black.vercel.app/admin/login
+- Production: https://al-mashhour.vercel.app/admin/login
 
 Use the credentials created by the seed-admin script:
 - Admin ID: admin

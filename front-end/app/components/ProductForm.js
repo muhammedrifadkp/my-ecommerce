@@ -6,9 +6,9 @@ import Image from 'next/image';
 export default function ProductForm({ product, onSubmit, onCancel }) {
   const [formData, setFormData] = useState({
     name: '',
-    category: 'vegetables', // Default category
+    category: 'premium-dry-fruits', // Default category
     price: '',
-    quantityUnit: 'kg',
+    quantityUnit: 'g',
     description: '',
     image: ''
   });
@@ -21,9 +21,9 @@ export default function ProductForm({ product, onSubmit, onCancel }) {
     if (product) {
       setFormData({
         name: product.name || '',
-        category: product.category || 'vegetables',
+        category: product.category || 'premium-dry-fruits',
         price: product.price || '',
-        quantityUnit: product.quantityUnit || 'kg',
+        quantityUnit: product.quantityUnit || 'g',
         description: product.description || '',
         image: product.image || ''
       });
@@ -49,9 +49,9 @@ export default function ProductForm({ product, onSubmit, onCancel }) {
       if (!product) {
         setFormData({
           name: '',
-          category: 'vegetables',
+          category: 'premium-dry-fruits',
           price: '',
-          quantityUnit: 'kg',
+          quantityUnit: 'g',
           description: '',
           image: ''
         });
@@ -99,9 +99,9 @@ export default function ProductForm({ product, onSubmit, onCancel }) {
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
           >
-            <option value="vegetables">Vegetables</option>
-            <option value="fruits">Fruits</option>
-            <option value="meat">Meat</option>
+            <option value="premium-dry-fruits">Premium Dry Fruits</option>
+            <option value="nuts-seeds">Nuts & Seeds</option>
+            <option value="dates-exotic">Dates & Exotic</option>
           </select>
         </div>
 
