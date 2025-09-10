@@ -15,6 +15,21 @@ export default function Home() {
   const [popularProducts, setPopularProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [heroImageLoaded, setHeroImageLoaded] = useState(false);
+  const [allProducts, setAllProducts] = useState([]);
+
+  // Function to shuffle and select random products
+  const shuffleProducts = (products, count = 8) => {
+    const shuffled = [...products].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+  };
+
+  // Function to refresh popular products with new random selection
+  const refreshPopularProducts = () => {
+    if (allProducts.length > 0) {
+      const newSelection = shuffleProducts(allProducts, 8);
+      setPopularProducts(newSelection);
+    }
+  };
 
   // Fetch popular products from backend
   useEffect(() => {
@@ -32,102 +47,20 @@ export default function Home() {
         if (response.ok) {
           const allProducts = await response.json();
           console.log('Products fetched successfully:', allProducts.length);
-          const selectedProducts = allProducts.slice(0, 8);
-          setPopularProducts(selectedProducts);
+          
+          // Store all products for future shuffling
+          setAllProducts(allProducts);
+          
+          // Randomly shuffle and select 8 products
+          const randomProducts = shuffleProducts(allProducts, 8);
+          setPopularProducts(randomProducts);
         } else {
           throw new Error(`API responded with status: ${response.status}`);
         }
       } catch (error) {
-        console.error('Failed to fetch from API, using fallback data:', error);
-
-        // Enhanced fallback products with more realistic data
-        const fallbackProducts = [
-          {
-            _id: '1',
-            name: 'Premium Almonds',
-            category: 'nuts',
-            price: '45',
-            originalPrice: '55',
-            quantityUnit: '500g',
-            image: 'https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=500',
-            fallbackImage: 'https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=500',
-            description: 'Premium California almonds, rich in protein and healthy fats',
-            featured: true
-          },
-          {
-            _id: '2',
-            name: 'Medjool Dates',
-            category: 'dates',
-            price: '38',
-            quantityUnit: '250g',
-            image: 'https://images.pexels.com/photos/5966630/pexels-photo-5966630.jpeg?auto=compress&cs=tinysrgb&w=500',
-            fallbackImage: 'https://images.pexels.com/photos/5966630/pexels-photo-5966630.jpeg?auto=compress&cs=tinysrgb&w=500',
-            description: 'Large, soft and sweet Medjool dates from Jordan',
-            featured: true
-          },
-          {
-            _id: '3',
-            name: 'Mixed Dried Fruits',
-            category: 'dried-fruits',
-            price: '42',
-            quantityUnit: '300g',
-            image: 'https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=500',
-            fallbackImage: 'https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=500',
-            description: 'Exotic blend of dried apricots, figs, and cranberries'
-          },
-          {
-            _id: '4',
-            name: 'Turkish Pistachios',
-            category: 'nuts',
-            price: '65',
-            originalPrice: '75',
-            quantityUnit: '400g',
-            image: 'https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=500',
-            fallbackImage: 'https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=500',
-            description: 'Premium Turkish pistachios, perfectly roasted and salted'
-          },
-          {
-            _id: '5',
-            name: 'Cashew Nuts',
-            category: 'nuts',
-            price: '55',
-            quantityUnit: '350g',
-            image: 'https://images.pexels.com/photos/1571774/pexels-photo-1571774.jpeg?auto=compress&cs=tinysrgb&w=500',
-            fallbackImage: 'https://images.pexels.com/photos/1571774/pexels-photo-1571774.jpeg?auto=compress&cs=tinysrgb&w=500',
-            description: 'Creamy and buttery cashews from Vietnam'
-          },
-          {
-            _id: '6',
-            name: 'Premium Walnuts',
-            category: 'nuts',
-            price: '48',
-            quantityUnit: '400g',
-            image: 'https://images.pexels.com/photos/1326884/pexels-photo-1326884.jpeg?auto=compress&cs=tinysrgb&w=500',
-            fallbackImage: 'https://images.pexels.com/photos/1326884/pexels-photo-1326884.jpeg?auto=compress&cs=tinysrgb&w=500',
-            description: 'Fresh California walnuts, rich in omega-3 fatty acids'
-          },
-          {
-            _id: '7',
-            name: 'Dried Figs',
-            category: 'dried-fruits',
-            price: '52',
-            quantityUnit: '300g',
-            image: 'https://images.pexels.com/photos/5946030/pexels-photo-5946030.jpeg?auto=compress&cs=tinysrgb&w=500',
-            fallbackImage: 'https://images.pexels.com/photos/5946030/pexels-photo-5946030.jpeg?auto=compress&cs=tinysrgb&w=500',
-            description: 'Sweet and chewy Turkish figs, naturally sun-dried'
-          },
-          {
-            _id: '8',
-            name: 'Dried Apricots',
-            category: 'dried-fruits',
-            price: '35',
-            quantityUnit: '250g',
-            image: 'https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=500',
-            fallbackImage: 'https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=500',
-            description: 'Sweet and chewy Turkish apricots, naturally dried'
-          }
-        ];
-        setPopularProducts(fallbackProducts);
+        console.error('Failed to fetch from API:', error);
+        console.log('API not available, no fallback products will be shown');
+        setPopularProducts([]);
       } finally {
         setLoading(false);
       }
@@ -401,27 +334,41 @@ export default function Home() {
                 Popular Products
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl">
-                Our customers' favorite premium selections, loved for their exceptional
-                quality and exquisite taste.
+                Random selection from our premium collection. 
+                {allProducts.length > 0 && `Showing 8 of ${allProducts.length} products.`}
               </p>
             </div>
-            <Link
-              href="/products"
-              className="btn-outline hover:bg-primary-50 hover:border-primary-300 hidden lg:flex items-center space-x-2"
-            >
-              <span>View All</span>
-              <FiArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex items-center space-x-4">
+              {allProducts.length > 0 && (
+                <button
+                  onClick={refreshPopularProducts}
+                  className="btn-ghost flex items-center space-x-2 hover:bg-primary-50 hover:text-primary-700"
+                  aria-label="Shuffle products"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  <span className="hidden lg:inline">Shuffle</span>
+                </button>
+              )}
+              <Link
+                href="/products"
+                className="btn-outline hover:bg-primary-50 hover:border-primary-300 hidden lg:flex items-center space-x-2"
+              >
+                <span>View All</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
           {loading ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[...Array(8)].map((_, i) => (
                 <div key={i} className="card h-96 loading-skeleton"></div>
               ))}
             </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          ) : popularProducts.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {popularProducts.map((product, index) => (
                 <div
                   key={product._id}
@@ -431,6 +378,22 @@ export default function Home() {
                   <ProductCard product={product} />
                 </div>
               ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-neutral-100 rounded-full mb-4">
+                <span className="text-2xl">🛒</span>
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">No Products Available</h3>
+              <p className="text-neutral-600 mb-6">
+                Products will appear here when the backend is connected.
+              </p>
+              <Link
+                href="/admin"
+                className="btn-primary"
+              >
+                Add Products
+              </Link>
             </div>
           )}
 
