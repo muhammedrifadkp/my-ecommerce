@@ -181,76 +181,216 @@ export default function Home() {
       <Navbar />
 
       {/* Premium Hero Section */}
-      <section className="relative overflow-hidden min-h-[65vh] md:min-h-[60vh] flex items-center pt-8 md:pt-0">
-        {/* Background Elements */}
+      <section className="relative overflow-hidden min-h-[90vh] md:min-h-[70vh] flex items-center pt-8 md:pt-0">
+        {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-500"></div>
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-purple-500/20"></div>
 
-          {/* Decorative Elements */}
-          <div className="absolute top-20 right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 left-20 w-48 h-48 bg-white/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-secondary-400/20 rounded-full blur-xl animate-pulse-soft"></div>
+          {/* Dynamic Floating Elements */}
+          <div className="absolute top-20 right-10 w-40 h-40 md:w-80 md:h-80 bg-gradient-to-r from-yellow-400/30 to-orange-500/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 left-10 w-32 h-32 md:w-64 md:h-64 bg-gradient-to-r from-pink-400/20 to-red-500/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 left-1/3 w-24 h-24 md:w-48 md:h-48 bg-gradient-to-r from-blue-400/15 to-purple-500/15 rounded-full blur-xl animate-pulse-soft"></div>
+          <div className="absolute top-10 left-1/4 w-20 h-20 bg-white/10 rounded-full blur-lg animate-float" style={{ animationDelay: '2s' }}></div>
 
-          {/* Grain Texture Overlay */}
-          <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'1\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' opacity=\'0.03\'/%3E%3C/svg%3E")' }}></div>
+          {/* Animated Pattern Overlay */}
+          <div className="absolute inset-0 opacity-30" style={{
+            backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 2px, transparent 2px), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px, 40px 40px',
+            animation: 'float 8s ease-in-out infinite'
+          }}></div>
         </div>
 
-        <div className="relative container-custom pt-4 pb-6">
+        <div className="relative container-custom pt-4 pb-8">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Hero Content */}
-            <div className="text-white space-y-4 md:space-y-6 px-4 md:px-0">
-              <div className="space-y-6 md:space-y-10">
-                {/* <div className="badge-gradient inline-flex items-center space-x-2">
-                  <FiStar className="w-4 h-4" />
-                  <span>Premium Collection 2024</span>
-                </div> */}
-
-                <h1 className="text-3xl md:text-4xl lg:text-6xl font-display font-bold leading-tight pt-2 md:pt-6">
-                  Premium
-                  <span className="block text-gradient-secondary bg-clip-text text-transparent">
-                    Dry Fruits
-                  </span>
-                  <span className="block text-2xl md:text-3xl lg:text-4xl font-light">& Luxury Nuts</span>
-                </h1>
-
-                <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-xl leading-relaxed">
-                  Discover our exquisite collection of hand-selected premium dry fruits,
-                  luxury nuts, and exotic delicacies sourced from the finest regions worldwide.
-                </p>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <Link href="/categories" className="btn-secondary btn-xl group">
-                  <span>Explore Collection</span>
-                  <FiArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-                <Link href="/products" className="btn-outline text-white border-white/30 hover:bg-white/10 btn-xl">
-                  View All Products
-                </Link>
-              </div>
-
-              {/* Premium Stats */}
-              <div className="grid grid-cols-3 gap-4 md:gap-6 pt-4 md:pt-6 pb-4 border-t border-white/20">
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold">50+</div>
-                  <div className="text-xs md:text-sm text-white/70">Premium Varieties</div>
+            {/* Dynamic Hero Content */}
+            <div className="text-white space-y-6 px-4 md:px-0">
+              <div className="space-y-7">
+                {/* Enhanced Logo Section */}
+                <div className="flex items-center justify-center lg:justify-start mb-6">
+                  <div className="relative group">
+                    <div className="absolute -inset-2 bg-gradient-to-r from-white-400 via-white-500 to-white-600 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 animate-pulse"></div>
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-4 border border-white/30">
+                      <div className="w-64 h-20 md:w-72 md:h-24 relative">
+                        <Image
+                          src="/logo-and-name.png"
+                          alt="Al Mashhour - Premium Dry Fruits & Nuts"
+                          fill
+                          className="object-contain drop-shadow-2xl"
+                          priority
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold">100%</div>
-                  <div className="text-xs md:text-sm text-white/70">Natural & Pure</div>
+
+                {/* Exciting Typography with Animations */}
+                <div className="space-y-5">
+                  <div className="relative">
+                    <h1 className="text-3xl md:text-4xl lg:text-6xl font-display font-bold leading-tight animate-fade-in-up">
+                      <span className="block text-white drop-shadow-2xl animate-slide-right">Discover</span>
+                      <span className="block bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text text-transparent drop-shadow-2xl animate-slide-left" style={{ animationDelay: '0.3s' }}>
+                        Premium Luxury
+                      </span>
+                      <span className="block text-xl md:text-2xl lg:text-4xl font-light text-white/95 animate-fade-in" style={{ animationDelay: '0.6s' }}>Dry Fruits & Exotic Nuts</span>
+                    </h1>
+
+                    {/* Floating decorative elements */}
+                    {/* <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce opacity-80"></div> */}
+                    {/* <div className="absolute top-1/2 -left-6 w-6 h-6 bg-pink-400 rounded-full animate-pulse opacity-60"></div> */}
+                  </div>
+
+                  {/* Interactive Features Grid */}
+                  {/* <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-md rounded-3xl p-5 border border-white/20 shadow-2xl animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="group flex items-center space-x-3 p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                        <div className="w-10 h-10 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-lg">✨</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-white">Premium Quality</div>
+                          <div className="text-xs text-white/80">Hand-selected</div>
+                        </div>
+                      </div>
+                      <div className="group flex items-center space-x-3 p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-lg">🚀</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-white">Fast Delivery</div>
+                          <div className="text-xs text-white/80">24h Dubai</div>
+                        </div>
+                      </div>
+                      <div className="group flex items-center space-x-3 p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                        <div className="w-10 h-10 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-lg">🎁</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-white">Gift Packaging</div>
+                          <div className="text-xs text-white/80">Luxury boxes</div>
+                        </div>
+                      </div>
+                      <div className="group flex items-center space-x-3 p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                        <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-lg">🏆</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-white">100% Natural</div>
+                          <div className="text-xs text-white/80">Pure & fresh</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold">24h</div>
-                  <div className="text-xs md:text-sm text-white/70">Fast Delivery</div>
+
+                {/* Dynamic Action Buttons */}
+                <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
+                  <Link href="/categories" className="group relative w-full flex items-center justify-center overflow-hidden rounded-3xl">
+                    <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 transform group-hover:scale-105 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/80 via-orange-500/80 to-red-500/80 animate-pulse"></div>
+                    <div className="relative px-8 py-4 text-white font-bold text-lg flex items-center space-x-3">
+                      <span>🎆 Explore Amazing Collection</span>
+                      <FiArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                    </div>
+                  </Link>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <Link href="/products" className="group bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-3 rounded-2xl font-semibold hover:bg-white/30 transition-all duration-300 text-center text-sm">
+                      <span className="group-hover:scale-110 inline-block transition-transform duration-300">🛒 All Products</span>
+                    </Link>
+                    <Link href="/gifts" className="group bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-3 rounded-2xl font-semibold hover:bg-white/30 transition-all duration-300 text-center text-sm">
+                      <span className="group-hover:scale-110 inline-block transition-transform duration-300">🎁 Gift Sets</span>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Interactive Stats Section */}
+                <div className="bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-md rounded-3xl p-6 border border-white/30 shadow-2xl animate-fade-in-up" style={{ animationDelay: '1.5s' }}>
+                  <div className="text-center mb-5">
+                    <h3 className="text-xl font-display font-bold text-white mb-2 flex items-center justify-center space-x-2">
+                      {/* <span>🌟</span> */}
+                      <span>Why Choose Al Mashhour?</span>
+                      {/* <span>🌟</span> */}
+                    </h3>
+                    <p className="text-sm text-white/90">Your premium destination for luxury dry fruits & nuts</p>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 mb-5">
+                    <div className="group text-center p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                      <div className="text-1xl font-bold bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">50+</div>
+                      <div className="text-xs text-white/90 font-medium">Premium Varieties</div>
+                    </div>
+                    <div className="group text-center p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer border-l border-r border-white/20">
+                      <div className="text-1xl font-bold bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">100%</div>
+                      <div className="text-xs text-white/90 font-medium">Natural & Pure</div>
+                    </div>
+                    <div className="group text-center p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                      <div className="text-1xl font-bold bg-gradient-to-r from-blue-300 to-cyan-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">24h</div>
+                      <div className="text-xs text-white/90 font-medium">Fast Delivery</div>
+                    </div>
+                  </div>
+
+                  {/* Trust Indicators */}
+                  <div className="flex justify-center space-x-8 pt-4 border-t border-white/20">
+                    <div className="group flex items-center space-x-2 text-sm text-white/90 hover:text-white transition-colors duration-300">
+                      <FiShield className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                      <span>Quality Guaranteed</span>
+                    </div>
+                    <div className="group flex items-center space-x-2 text-sm text-white/90 hover:text-white transition-colors duration-300">
+                      <FiStar className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                      <span>5★ Rated</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Animated Visual Elements */}
+                <div className="flex justify-center space-x-6 pt-4">
+                  <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-bounce"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-pink-400 to-red-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
                 </div>
               </div>
             </div>
 
-            {/* Hero Image */}
-            <div className="relative lg:block hidden">
-              <div className="relative w-full h-[450px] rounded-3xl overflow-hidden shadow-2xl">
+            {/* Spectacular Mobile Hero Image */}
+            <div className="relative lg:block">
+              {/* Mobile Interactive Visual */}
+              <div className="lg:hidden relative w-full h-72 rounded-3xl overflow-hidden shadow-2xl mb-6 animate-fade-in-up" style={{ animationDelay: '1.8s' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 via-orange-500/30 to-red-500/30 animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent"></div>
+
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="grid grid-cols-3 gap-6 p-6">
+                    <div className="group bg-white/20 backdrop-blur-md rounded-3xl p-5 transform rotate-6 hover:rotate-12 transition-all duration-500 cursor-pointer hover:scale-110">
+                      <div className="text-4xl text-center animate-bounce">🥜</div>
+                      <div className="text-xs text-white/95 text-center mt-3 font-bold">Premium Nuts</div>
+                      <div className="w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mt-2 group-hover:h-2 transition-all duration-300"></div>
+                    </div>
+                    <div className="group bg-white/20 backdrop-blur-md rounded-3xl p-5 transform -rotate-3 hover:-rotate-9 transition-all duration-500 cursor-pointer hover:scale-110">
+                      <div className="text-4xl text-center animate-bounce" style={{ animationDelay: '0.2s' }}>🍇</div>
+                      <div className="text-xs text-white/95 text-center mt-3 font-bold">Dry Fruits</div>
+                      <div className="w-full h-1 bg-gradient-to-r from-pink-400 to-red-500 rounded-full mt-2 group-hover:h-2 transition-all duration-300"></div>
+                    </div>
+                    <div className="group bg-white/20 backdrop-blur-md rounded-3xl p-5 transform rotate-2 hover:rotate-6 transition-all duration-500 cursor-pointer hover:scale-110">
+                      <div className="text-4xl text-center animate-bounce" style={{ animationDelay: '0.4s' }}>🌴</div>
+                      <div className="text-xs text-white/95 text-center mt-3 font-bold">Exotic Dates</div>
+                      <div className="w-full h-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full mt-2 group-hover:h-2 transition-all duration-300"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dynamic floating badges */}
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs px-4 py-2 rounded-full font-bold animate-pulse shadow-lg">
+                  ✨ Fresh Daily
+                </div>
+                <div className="absolute bottom-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-4 py-2 rounded-full font-bold animate-bounce shadow-lg">
+                  🎆 Premium Quality
+                </div>
+                
+              </div>
+
+              {/* Desktop Hero Image */}
+              <div className="hidden lg:block relative w-full h-[450px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/poster_with_logo.png" // REPLACE: Add your main hero image here
                   alt="Premium dry fruits and nuts collection"

@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+
   /* Keyframe Animations */
   @keyframes fadeInUp {
     from {
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -21,6 +23,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -31,6 +34,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -54,7 +58,12 @@
   }
 
   /* Typography */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-semibold tracking-tight;
     line-height: 1.2;
     text-wrap: balance;
@@ -138,6 +147,7 @@
 }
 
 @layer components {
+
   /* Button Components */
   .btn {
     @apply inline-flex items-center justify-center rounded-2xl px-6 py-3 text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
@@ -275,6 +285,7 @@
 }
 
 @layer utilities {
+
   /* Text Utilities */
   .text-balance {
     text-wrap: balance;

@@ -8,47 +8,47 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Premium Brand Colors - Sophisticated Earth Tones
+        // Almashhour Brand Colors - Luxury Deep Red Theme
         primary: {
-          50: '#faf9f7',
-          100: '#f4f1eb',
-          200: '#e8e1d4',
-          300: '#d9ccb8',
-          400: '#c7b299',
-          500: '#b8a082', // Main brand color
-          600: '#a08c6e',
-          700: '#8b795f',
-          800: '#716350',
-          900: '#5c5142',
-          950: '#302b22',
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#C70020', // Main brand color - luxury deep red
+          600: '#b91c1c',
+          700: '#991b1b',
+          800: '#7f1d1d',
+          900: '#450a0a',
+          950: '#2d0a0a',
         },
-        // Warm Amber - Premium Nuts & Golden Fruits
+        // Secondary Accents - Pink/Rose variations
         secondary: {
-          50: '#fefbf3',
-          100: '#fdf4e1',
-          200: '#fae6c2',
-          300: '#f6d297',
-          400: '#f0b86a',
-          500: '#ea9d47', // Golden amber
-          600: '#db7f3c',
-          700: '#b6622f',
-          800: '#924e2a',
-          900: '#764125',
-          950: '#3f2011',
+          50: '#fdf2f8',
+          100: '#fce7f3',
+          200: '#fbcfe8',
+          300: '#f9a8d4',
+          400: '#f472b6',
+          500: '#DD6578', // Secondary accent
+          600: '#D02C47', // Secondary accent darker
+          700: '#be185d',
+          800: '#9d174d',
+          900: '#831843',
+          950: '#500724',
         },
-        // Rich Mahogany - Dates & Dark Nuts
+        // Light Background Accents - Blush tones
         accent: {
-          50: '#f7f5f3',
-          100: '#ede7e1',
-          200: '#dacdc2',
-          300: '#c1ab9b',
-          400: '#a68774',
-          500: '#936f5a', // Rich mahogany
-          600: '#84614e',
-          700: '#6e4f41',
-          800: '#5b4238',
-          900: '#4b3830',
-          950: '#281d18',
+          50: '#F5D2D7', // Light background accent
+          100: '#F1C3CA', // Light background accent
+          200: '#fecdd3',
+          300: '#fda4af',
+          400: '#fb7185',
+          500: '#f43f5e',
+          600: '#e11d48',
+          700: '#C70020', // Links back to primary
+          800: '#9f1239',
+          900: '#881337',
+          950: '#4c0519',
         },
         // Fresh Green - Natural & Organic
         success: {
@@ -108,8 +108,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Cinzel', 'Playfair Display', 'serif'], // Luxury fonts for headings/logo
+        serif: ['Playfair Display', 'Cinzel', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'monospace'],
       },
       fontSize: {
@@ -146,15 +147,15 @@ module.exports = {
         'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         'large': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 10px -2px rgba(0, 0, 0, 0.04)',
         'xl': '0 20px 60px -15px rgba(0, 0, 0, 0.15), 0 8px 25px -8px rgba(0, 0, 0, 0.1)',
-        'colored-primary': '0 4px 25px -5px rgba(184, 160, 130, 0.25), 0 10px 10px -5px rgba(184, 160, 130, 0.04)',
-        'colored-secondary': '0 4px 25px -5px rgba(234, 157, 71, 0.25), 0 10px 10px -5px rgba(234, 157, 71, 0.04)',
+        'colored-primary': '0 4px 25px -5px rgba(199, 0, 32, 0.25), 0 10px 10px -5px rgba(199, 0, 32, 0.04)',
+        'colored-secondary': '0 4px 25px -5px rgba(221, 101, 120, 0.25), 0 10px 10px -5px rgba(221, 101, 120, 0.04)',
         'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-        'glow': '0 0 20px rgba(184, 160, 130, 0.3)',
+        'glow': '0 0 20px rgba(199, 0, 32, 0.3)',
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #b8a082 0%, #a08c6e 50%, #8b795f 100%)',
-        'gradient-secondary': 'linear-gradient(135deg, #ea9d47 0%, #db7f3c 50%, #b6622f 100%)',
-        'gradient-accent': 'linear-gradient(135deg, #936f5a 0%, #84614e 50%, #6e4f41 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #C70020 0%, #b91c1c 50%, #991b1b 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #DD6578 0%, #D02C47 50%, #be185d 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #F5D2D7 0%, #F1C3CA 50%, #fecdd3 100%)',
         'gradient-success': 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
         'gradient-warm': 'linear-gradient(135deg, #fef3c7 0%, #f59e0b 100%)',
         'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',

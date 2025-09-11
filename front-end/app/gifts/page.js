@@ -57,7 +57,7 @@ export default function GiftsPage() {
 
                                 <h1 className="text-3xl md:text-4xl lg:text-6xl font-display font-bold leading-tight">
                                     Perfect Gifts
-                                    <span className="block text-gradient-secondary bg-clip-text text-transparent">
+                                    <span className="block text-gradient-secondary">
                                         Every Occasion
                                     </span>
                                     <span className="block text-2xl md:text-3xl lg:text-4xl font-light">Crafted with Love</span>
